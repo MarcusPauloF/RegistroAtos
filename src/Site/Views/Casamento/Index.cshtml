@@ -1,0 +1,97 @@
+﻿@model IEnumerable<RegistroDeAtos.Services.CasamentoService.Commands.Output.QueryCasamento>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Cadastrar">Cadastrar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.DataRegistro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeConjugeUm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNascimentoConjugeUm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CpfConjugeUm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomePaiConjugeUm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeMaeConjugeUm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeConjugeDois)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNascimentoConjugeDois)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CpfConjugeDois)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomePaiConjugeDois)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeMaeConjugeDois)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.DataRegistro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeConjugeUm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataNascimentoConjugeUm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CpfConjugeUm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomePaiConjugeUm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeMaeConjugeUm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeConjugeDois)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataNascimentoConjugeDois)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CpfConjugeDois)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomePaiConjugeDois)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeMaeConjugeDois)
+            </td>
+            <td>
+                    @Html.ActionLink("Editar", "Edit", new {  id=item.Id },new {@class="btn btn-sm btn-warning"}) |
+                    @Html.ActionLink("Detalhes", "Details", new {  id=item.Id },new {@class="btn btn-sm btn-primary"}) |
+                    @Html.ActionLink("Delete", "Delete", new {  id=item.Id },new {@class="btn btn-sm btn-danger"}))
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

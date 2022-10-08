@@ -1,0 +1,128 @@
+﻿@model RegistroDeAtos.Services.CasamentoService.Commands.Input.CasamentoCommand
+
+@{
+    ViewData["Title"] = "Cadastrar";
+}
+
+<h1>Cadastrar</h1>
+
+<div class="row">
+    <div class="col-md-10">
+        <form asp-action="Cadastrar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DataCasamento" class="control-label"></label>
+                <input asp-for="DataCasamento" class="form-control" />
+                <span asp-validation-for="DataCasamento" class="text-danger"></span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="control-label">Nome conjuge Um</label>
+                <input asp-for="ConjUm.Nome" class="form-control" />
+                <span asp-validation-for="ConjUm.Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Data de nacimento conjunge um</label>
+                <input asp-for="ConjUm.DataNascimento" class="form-control" />
+                <span asp-validation-for="ConjUm.DataNascimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">CPF conjunge um</label>
+                <input asp-for="ConjUm.Documento.Cpf" class="form-control" />
+                <span asp-validation-for="ConjUm.Documento.Cpf" class="text-danger"></span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="control-label">Nome do pai do conjuge um</label>
+                <input asp-for="ConjUm.Pai.Nome" class="form-control" />
+                <span asp-validation-for="ConjUm.Pai.Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Data de nascimento do pai do conjuge um</label>
+                <input asp-for="ConjUm.Pai.Data" class="form-control" />
+                <span asp-validation-for="ConjUm.Pai.Data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Documento do pai conjuge um</label>
+                <input asp-for="ConjUm.DocPai.Cpf" class="form-control" />
+                <span asp-validation-for="ConjUm.DocPai.Cpf" class="text-danger"></span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="control-label">Nome da mãe conjuge um</label>
+                <input asp-for="ConjUm.Mae.Nome" class="form-control" />
+                <span asp-validation-for="ConjUm.Mae.Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Data nascimento mãe conjuge um</label>
+                <input asp-for="ConjUm.Mae.Data" class="form-control" />
+                <span asp-validation-for="ConjUm.Mae.Data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label"> CPF da mãe conjuge um</label>
+                <input asp-for="ConjUm.DocMae.Cpf" class="form-control" />
+                <span asp-validation-for="ConjUm.DocMae.Cpf" class="text-danger"></span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="control-label">Nome conjuge dois</label>
+                <input asp-for="ConjDois.Nome" class="form-control" />
+                <span asp-validation-for="ConjDois.Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Data de nacimento conjunge dois</label>
+                <input asp-for="ConjDois.DataNascimento" class="form-control" />
+                <span asp-validation-for="ConjDois.DataNascimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">CPF conjuge dois</label>
+                <input asp-for="ConjDois.Documento.Cpf" class="form-control" />
+                <span asp-validation-for="ConjDois.Documento.Cpf" class="text-danger"></span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="control-label">Nome do pai do conjuge dois</label>
+                <input asp-for="ConjDois.Pai.Nome" class="form-control" />
+                <span asp-validation-for="ConjDois.Pai.Nome" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Data de nascimento do pai conjuge dois</label>
+                <input asp-for="ConjDois.Pai.Data" class="form-control" />
+                <span asp-validation-for="ConjDois.Pai.Data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Cpf do pai conjuge dois</label>
+                <input asp-for="ConjDois.DocPai.Cpf" class="form-control" />
+                <span asp-validation-for="ConjDois.DocPai.Cpf" class="text-danger"></span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="control-label">Nome da mãe conjuge dois</label>
+                <input asp-for="ConjDois.Mae.Nome" class="form-control" />
+                <span asp-validation-for="ConjDois.Mae.Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Data de nascimento da mãe conjuge dois</label>
+                <input asp-for="ConjDois.Mae.Data" class="form-control" />
+                <span asp-validation-for="ConjDois.Mae.Data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">CPF mãe conjuge dois</label>
+                <input asp-for="ConjDois.DocMae.Cpf" class="form-control" />
+                <span asp-validation-for="ConjDois.DocMae.Cpf" class="text-danger"></span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a class="btn btn-danger" asp-action="Index">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

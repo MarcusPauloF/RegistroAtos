@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="CasamentoService\Commands\Input\NewFile1.txt" />
+    <None Remove="CasamentoService\Commands\Output\NewFile1.txt" />
+    <None Remove="CasamentoService\Event\NewFile1.txt" />
+    <None Remove="CasamentoService\Query\NewFile1.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RegistroDeAtos.Core\RegistroDeAtos.Core.csproj" />
+    <ProjectReference Include="..\src\RegistroDeAtos.Domain\RegistroDeAtos.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="CasamentoService\Validation\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="11.0.0" />
+  </ItemGroup>
+
+</Project>
