@@ -14,6 +14,6 @@ namespace RegistroAtos.Domain.Entidade
 
         public virtual Conjuge ConjUm { get; set; }
         public virtual Conjuge ConjDois  { get; set; }
-        public int MyProperty { get; set; }
+
     } 
 }
