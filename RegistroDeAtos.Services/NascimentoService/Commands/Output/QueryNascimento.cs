@@ -8,6 +8,7 @@ namespace RegistroDeAtos.Services.NascimentoService.Commands.Output
 {
     public class QueryNascimento
     {
+        public Guid Id { get; set; }
         public DateTime DataNascimento { get; set; } 
         public DateTime DataRegistro { get; set; }
 
