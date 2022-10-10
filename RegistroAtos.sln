@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResgistroDeAtos.Site", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegistroDeAtos.Services", "RegistroDeAtos.Services\RegistroDeAtos.Services.csproj", "{A6BF2F9C-CFC4-4C63-9F0C-16FF58C52E38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistroDeAtos.Core", "RegistroDeAtos.Core\RegistroDeAtos.Core.csproj", "{6238D5C4-5916-4D97-BA87-12B4F5229602}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegistroDeAtos.Core", "RegistroDeAtos.Core\RegistroDeAtos.Core.csproj", "{6238D5C4-5916-4D97-BA87-12B4F5229602}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

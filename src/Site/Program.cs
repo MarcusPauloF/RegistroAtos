@@ -6,6 +6,8 @@ using RegistroAtos.Infra.Repositorio;
 using RegistroDeAtos.Core.Mediator;
 using RegistroDeAtos.Services.CasamentoService.Commands.Input;
 using RegistroDeAtos.Services.CasamentoService.Event;
+using RegistroDeAtos.Services.NascimentoService.Commands.Event;
+using RegistroDeAtos.Services.NascimentoService.Commands.Input;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,8 @@ builder.Services.AddMediatR(typeof(Program));
 builder.Services.AddScoped<IMediatorHandler, MediatorHandler>();
 builder.Services.AddScoped<IRequestHandler<CasamentoCommand, bool>, CadastrarCasamentoHandler>();
 builder.Services.AddScoped<ICasamentoRepository, CasamentoRepository>();
+builder.Services.AddScoped<IRequestHandler<NascimentoCommand, bool>, CadastrarNascimentoHandler>();
+builder.Services.AddScoped<INascimentoRepository, NascimentoRepository>();
 
 builder.Services.AddEntityFrameworkNpgsql()
              .AddDbContext<Context>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("RegistroDeAto")));

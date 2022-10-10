@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RegistroDeAtos.Core.Mediator;
-using RegistroDeAtos.Services.NascimentoService.Commands;
 using RegistroDeAtos.Services.NascimentoService.Commands.Input;
 using RegistroDeAtos.Services.NascimentoService.Commands.Output;
 
@@ -30,7 +29,7 @@ namespace ResgistroDeAtos.Site.Controllers
         [HttpPost]
         public async Task<IActionResult> Cadastrar(NascimentoCommand nascimentoCommand)
         {
-            bool casamento = await _mediatrHandler.EnviarComando(nascimentoCommand);
+            bool nascimento = await _mediatrHandler.EnviarComando(nascimentoCommand);
 
             return RedirectToAction(nameof(Index));
         }
