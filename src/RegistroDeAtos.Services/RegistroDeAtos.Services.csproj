@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RegistroDeAtos.Core\RegistroDeAtos.Core.csproj" />
-    <ProjectReference Include="..\src\RegistroDeAtos.Domain\RegistroDeAtos.Domain.csproj" />
+    <ProjectReference Include="..\RegistroDeAtos.Domain\RegistroDeAtos.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

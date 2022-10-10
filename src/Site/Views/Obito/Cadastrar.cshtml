@@ -1,4 +1,4 @@
-﻿@model RegistroDeAtos.Services.NascimentoService.Commands.Input.NascimentoCommand
+﻿@model RegistroDeAtos.Services.ObitoService.Commands.Input.ObitoCommand
 
 @{
     ViewData["Title"] = "Cadastrar";
@@ -6,7 +6,7 @@
 
 <h1>Cadastrar</h1>
 
-<h4>Cadastro de nascimento</h4>
+<h4>Obito</h4>
 <hr />
 <div class="row">
     <div class="col-md-10">
@@ -18,18 +18,24 @@
                 <span asp-validation-for="DataRegistro" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label class="control-label">Data do nascimento</label>
-                <input asp-for="RecemNascido.Data" class="form-control" />
-                <span asp-validation-for="RecemNascido.Data" class="text-danger"></span>
-            </div>  
+                <label class="control-label">Data do obito</label>
+                <input asp-for="DataObito" class="form-control" />
+                <span asp-validation-for="DataObito" class="text-danger"></span>
+            </div>
             <hr />
             <div class="form-group">
-                <label class="control-label">Nome do registrado</label>
-                <input asp-for="RecemNascido.Nome" class="form-control" />
-                <span asp-validation-for="RecemNascido.Nome" class="text-danger"></span>
+                <label  class="control-label">Nome do falecido</label>
+                <input asp-for="Falecido.Nome" class="form-control" />
+                <span asp-validation-for="Falecido.Nome" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label class="control-label">Nome do pai</label>
+                <label  class="control-label">Data de nascimento</label>
+                <input asp-for="Falecido.Data" class="form-control" />
+                <span asp-validation-for="Falecido.Data" class="text-danger"></span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label  class="control-label">Nome do pai</label>
                 <input asp-for="Pai.Nome" class="form-control" />
                 <span asp-validation-for="Pai.Nome" class="text-danger"></span>
             </div>
@@ -38,7 +44,6 @@
                 <input asp-for="Mae.Nome" class="form-control" />
                 <span asp-validation-for="Mae.Nome" class="text-danger"></span>
             </div>
-            <hr />
             <div class="form-group">
                 <label  class="control-label">Data de nascimento do pai</label>
                 <input asp-for="Pai.Data" class="form-control" />
@@ -46,23 +51,12 @@
             </div>
             <div class="form-group">
                 <label  class="control-label">Data de nascimento da mãe</label>
-                <input asp-for="Mae.Data" class="form-control" />
+                <input asp-for="Falecido.Data" class="form-control" />
                 <span asp-validation-for="Mae.Data" class="text-danger"></span>
             </div>
-            <hr />
-            <div class="form-group">
-                <label  class="control-label">CPF do pai</label>
-                <input asp-for="DocPai.Cpf" class="form-control" />
-                <span asp-validation-for="DocPai.Cpf" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label  class="control-label">CPF da mãe</label>
-                <input asp-for="DocMae.Cpf" class="form-control" />
-                <span asp-validation-for="DocMae.Cpf" class="text-danger"></span>
-            </div>
-            
+            <br />
 
-          
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
                 <a class="btn btn-danger" asp-action="Index">Cancelar</a>
@@ -72,7 +66,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+
 </div>
 
 @section Scripts {

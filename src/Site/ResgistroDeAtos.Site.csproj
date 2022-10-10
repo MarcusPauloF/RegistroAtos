@@ -22,8 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\RegistroDeAtos.Services\RegistroDeAtos.Services.csproj" />
     <ProjectReference Include="..\RegistroDeAtos.Infra\RegistroAtos.Infra.csproj" />
+    <ProjectReference Include="..\RegistroDeAtos.Services\RegistroDeAtos.Services.csproj" />
   </ItemGroup>
 
 </Project>
