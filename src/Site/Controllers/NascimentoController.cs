@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RegistroDeAtos.Core.Mediator;
 using RegistroDeAtos.Services.NascimentoService.Commands;
+using RegistroDeAtos.Services.NascimentoService.Commands.Input;
 using RegistroDeAtos.Services.NascimentoService.Commands.Output;
 
 namespace ResgistroDeAtos.Site.Controllers

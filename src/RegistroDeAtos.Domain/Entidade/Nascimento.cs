@@ -19,6 +19,7 @@ namespace RegistroAtos.Domain.Entidade
         public Documento DocPai { get; set; }
         public Documento DocMae { get; set; }
         public PessoaFisica RecemNascido { get; set; }
+       
 
     }
 

@@ -1,4 +1,4 @@
-﻿@*@model RegistroDeAtos.Services.NascimentoService.Commands.Input.NascimentoCommand
+﻿@model RegistroDeAtos.Services.NascimentoService.Commands.Input.NascimentoCommand
 
 @{
     ViewData["Title"] = "Cadastrar";
@@ -6,20 +6,66 @@
 
 <h1>Cadastrar</h1>
 
-<h4>NascimentoCommand</h4>
+<h4>Cadastro de nascimento</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-10">
         <form asp-action="Cadastrar">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="DataRegistro" class="control-label"></label>
+                <label class="control-label">Data do registro</label>
                 <input asp-for="DataRegistro" class="form-control" />
                 <span asp-validation-for="DataRegistro" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label class="control-label">Data do nascimento</label>
+                <input asp-for="DataNascimento" class="form-control" />
+                <span asp-validation-for="DataNascimento" class="text-danger"></span>
+            </div>  
+            <hr />
+            <div class="form-group">
+                <label class="control-label">Nome do registrado</label>
+                <input asp-for="NomeDoRegistrado" class="form-control" />
+                <span asp-validation-for="NomeDoRegistrado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Nome do pai</label>
+                <input asp-for="NomeDoPai" class="form-control" />
+                <span asp-validation-for="NomeDoPai" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label  class="control-label">Nome da mãe</label>
+                <input asp-for="NomeDaMae" class="form-control" />
+                <span asp-validation-for="NomeDaMae" class="text-danger"></span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label  class="control-label">Data de nascimento do pai</label>
+                <input asp-for="DataNascimentoPai" class="form-control" />
+                <span asp-validation-for="DataNascimentoPai" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label  class="control-label">Data de nascimento da mãe</label>
+                <input asp-for="DataNascimentoMae" class="form-control" />
+                <span asp-validation-for="DataNascimentoMae" class="text-danger"></span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label  class="control-label">CPF do pai</label>
+                <input asp-for="CpfDoPai" class="form-control" />
+                <span asp-validation-for="CpfDoPai" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label  class="control-label">CPF da mãe</label>
+                <input asp-for="CpfDaMae" class="form-control" />
+                <span asp-validation-for="CpfDaMae" class="text-danger"></span>
+            </div>
+            
+
           
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
+                <a class="btn btn-danger" asp-action="Index">Cancelar</a>
             </div>
         </form>
     </div>
@@ -32,4 +78,3 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
-*@
