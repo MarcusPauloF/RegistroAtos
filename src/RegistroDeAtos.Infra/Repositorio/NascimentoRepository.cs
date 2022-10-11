@@ -17,11 +17,11 @@ namespace RegistroAtos.Infra.Repositorio
         }
 
         public async Task<List<Nascimento>> ObterTodos() => await _db.Nascimentos
-            .Include(t => t.RecemNascido.Nome)
-            .Include(t => t.Pai.Nome)
-            .Include(t => t.Mae.Nome)
-            .Include(t => t.DocPai.Cpf)
-            .Include(t => t.DocMae.Cpf)
+            .Include(t => t.RecemNascido)
+            .Include(t => t.Pai)
+            .Include(t => t.Mae)
+            .Include(t => t.DocPai)
+            .Include(t => t.DocMae)
 
             .ToListAsync();
     }

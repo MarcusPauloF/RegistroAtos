@@ -9,6 +9,7 @@ using RegistroDeAtos.Services.CasamentoService.Event;
 using RegistroDeAtos.Services.CasamentoService.Query;
 using RegistroDeAtos.Services.NascimentoService.Commands.Event;
 using RegistroDeAtos.Services.NascimentoService.Commands.Input;
+using RegistroDeAtos.Services.NascimentoService.Query;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,7 +22,7 @@ builder.Services.AddScoped<ICasamentoRepository, CasamentoRepository>();
 builder.Services.AddScoped<IRequestHandler<NascimentoCommand, bool>, CadastrarNascimentoHandler>();
 builder.Services.AddScoped<INascimentoRepository, NascimentoRepository>();
 builder.Services.AddScoped<IConsultarCasamentoQuery, ConsultarCasamentoQuery>();
-
+builder.Services.AddScoped<IConsultarNascimentoQuery, ConsultarNascimentoQuery>();
 
 builder.Services.AddEntityFrameworkNpgsql()
              .AddDbContext<Context>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("RegistroDeAto")));
