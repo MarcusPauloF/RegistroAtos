@@ -9,6 +9,6 @@ namespace RegistroAtos.Domain.Repositorio
 {
     public interface ICasamentoRepository : IBaseRepository<Casamento>
     {
-
+        Task<List<Casamento>> ObterTodos();
     }
 }

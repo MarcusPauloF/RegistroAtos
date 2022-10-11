@@ -6,6 +6,7 @@ using RegistroAtos.Infra.Repositorio;
 using RegistroDeAtos.Core.Mediator;
 using RegistroDeAtos.Services.CasamentoService.Commands.Input;
 using RegistroDeAtos.Services.CasamentoService.Event;
+using RegistroDeAtos.Services.CasamentoService.Query;
 using RegistroDeAtos.Services.NascimentoService.Commands.Event;
 using RegistroDeAtos.Services.NascimentoService.Commands.Input;
 
@@ -19,9 +20,12 @@ builder.Services.AddScoped<IRequestHandler<CasamentoCommand, bool>, CadastrarCas
 builder.Services.AddScoped<ICasamentoRepository, CasamentoRepository>();
 builder.Services.AddScoped<IRequestHandler<NascimentoCommand, bool>, CadastrarNascimentoHandler>();
 builder.Services.AddScoped<INascimentoRepository, NascimentoRepository>();
+builder.Services.AddScoped<IConsultarCasamentoQuery, ConsultarCasamentoQuery>();
+
 
 builder.Services.AddEntityFrameworkNpgsql()
              .AddDbContext<Context>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("RegistroDeAto")));
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 //AddEntityFrameworkNpgsql().AddDbContext<Context>(op => op.UseNpgsql(builder.Configuration.GetConnectionString("RegistroDeAto"))
 //    .EnableSensitiveDataLogging()

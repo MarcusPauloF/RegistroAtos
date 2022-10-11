@@ -1,68 +1,71 @@
-﻿
+﻿@model IEnumerable<RegistroDeAtos.Services.NascimentoService.Commands.Output.QueryNascimento>
+
 @{
+    ViewData["Title"] = "Index";
 }
-<div class="campo">
-    <h1 id="titulo">Cadastro Nascimento</h1>
-    <h2 class="sizeh1">Dados do Recém-Nascido</h2>
-    
-    <br />
-</div>
 
-<form>
-    <fieldset class="grupo">
-        <div class="campo">
-            <label>Data do Registro</label>
-            <input type="date", name="Data do Registro" id="dataregistro"/>
-        </div>
+<h1>Index</h1>
 
-        <div class="campo">
-            <label>Data de Nascimento</label>
-            <input type="date", name="DataDoNascimento" id="datanascimento" required/>
-        </div>
-    </fieldset>
-
-    <div class="campo"> 
-        
-        <br />
-        <div class="campo">
-         <label for="nome">Nome do Registrado</label>
-        <input type="text", name="NomeDoRegistrado", id="nomeregistrado" required/>
-        </div>
-        <br />
-        <div class="campo">
-         <label for="nomepai">Nome do Pai</label>
-        <input type="text", name="nomepai", id="nomepai"/>
-        </div>
-         <br />
-         <div class="campo">
-         <label for="nomemae">Nome da Mãe</label>
-        <input type="text", name="nomemae", id="nomemae" required/>
-        </div>
-         <br />
-         <div class="campo">
-         <label for="datanascimentopai">Data Nascimento do pai</label>
-        <input type="date", name="datanascimentopai", id="datanascimentopai"/>
-        </div>
-         <br />
-         <div class="campo">
-         <label for="datanascimentomae">Data Nascimento mãe</label>
-        <input type="date", name="datanascimentomae", id="datanascimentomae" required/>
-        </div>
-         <br />
-         <div class="campo">
-         <label>CPF do Pai</label>
-        <input type="number", name="cpfpai", id="cpfpai"/>
-        </div>
-         <br />
-         <div class="campo">
-         <label>CPF do Mãe</label>
-        <input type="number", name="cpfmae", id="cpfmae" required/>
-        </div>
-        <br />
-    </div>
-
-    <div class="campo">
-        <br />
-        <button type="submit" class="botao">Salvar</button>
-    </div>
-</form>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataRegistro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeDoRegistrado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeDoPai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeDaMae)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CpfDoPai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CpfDaMae)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataNascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataRegistro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeDoRegistrado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeDoPai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeDaMae)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CpfDoPai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CpfDaMae)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new {  id=item.Id },new {@class="btn btn-sm btn-warning"}) |
+                @Html.ActionLink("Detalhes", "Details", new {  id=item.Id },new {@class="btn btn-sm btn-primary"}) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.Id },new {@class="btn btn-sm btn-danger"}))
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

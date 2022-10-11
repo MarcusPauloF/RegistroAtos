@@ -26,8 +26,10 @@ namespace RegistroDeAtos.Services.CasamentoService.Event
             casamento.ConjUm.Mae = new PessoaFisica();
             casamento.ConjUm.Mae.Nome = request.ConjUm.Mae.Nome;
             casamento.ConjUm.Mae.Data = request.ConjUm.Mae.Data;
+            casamento.ConjUm.Mae.TipoPessoa = EnumTipoPessoa.Mae;
             casamento.ConjUm.Pai = new PessoaFisica();
             casamento.ConjUm.Pai.Nome = request.ConjUm.Pai.Nome;
+            casamento.ConjUm.Pai.TipoPessoa = EnumTipoPessoa.Pai;
             casamento.ConjUm.Pai.Data = request.ConjUm.Pai.Data;
             casamento.ConjUm.DocMae = new Documento();
             casamento.ConjUm.DocMae.Cpf = request.ConjUm.DocMae.Cpf;

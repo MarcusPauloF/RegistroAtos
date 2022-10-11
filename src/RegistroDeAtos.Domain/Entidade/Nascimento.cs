@@ -14,11 +14,11 @@ namespace RegistroAtos.Domain.Entidade
         public Guid DocMaeId { get; set; }
         public Guid RecemNascidoId { get; set; }
 
-        public PessoaFisica Pai { get; set; }
-        public PessoaFisica Mae { get; set; }
+        public virtual PessoaFisica Pai { get; set; }
+        public virtual PessoaFisica Mae { get; set; }
         public Documento DocPai { get; set; }
         public Documento DocMae { get; set; }
-        public PessoaFisica RecemNascido { get; set; }
+        public virtual PessoaFisica RecemNascido { get; set; }
        
 
     }

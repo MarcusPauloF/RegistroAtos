@@ -8,6 +8,7 @@ namespace RegistroAtos.Domain.Entidade
 {
     public class PessoaFisica : Registro
     {
+
         public virtual ICollection<Obito> ObitoPai { get; set; } = new HashSet<Obito>();
         public virtual ICollection<Obito> ObitoMae { get; set; } = new HashSet<Obito>();
         public virtual Obito ObitoFalecido { get; set; } 

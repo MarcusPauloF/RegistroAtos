@@ -11,7 +11,7 @@ namespace RegistroAtos.Infra.Repositorio
 {
     public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
     {
-        private Context _db;
+        protected Context _db;
 
         public BaseRepository(Context db)
         {

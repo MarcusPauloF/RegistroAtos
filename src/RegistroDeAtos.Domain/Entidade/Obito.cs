@@ -8,7 +8,7 @@ namespace RegistroAtos.Domain.Entidade
 {
     public class Obito : BaseEntity
     {
-        public DateTime DataObito { get; set; } = DateTime.Now;
+        public DateTime DataObito { get; set; }
 
         public Guid FalecidoId { get; set; }
         public Guid PaiId { get; set; }
