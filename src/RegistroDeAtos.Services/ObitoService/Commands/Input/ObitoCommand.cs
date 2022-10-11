@@ -10,6 +10,7 @@ namespace RegistroDeAtos.Services.ObitoService.Commands.Input
 {
     public class ObitoCommand : Command
     {
+        public Guid Id { get; set; } = new Guid();
         public DateTime DataRegistro { get; set; } = new DateTime();
         public DateTime DataObito { get; set; } = new DateTime();
         public PessoaFisicaCommand Pai { get; set; } = new PessoaFisicaCommand();

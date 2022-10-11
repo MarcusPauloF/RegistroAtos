@@ -23,22 +23,22 @@ namespace RegistroDeAtos.Services.CasamentoService.Query
             List<QueryCasamento> casamentos = new List<QueryCasamento>();
             resultado.ForEach(t =>
             {
-                QueryCasamento casameto = new QueryCasamento();
-                casameto.CpfConjugeDois = t.ConjDois.Documento.Cpf;
-                casameto.CpfConjugeUm = t.ConjUm.Documento.Cpf;
-                casameto.DataNascimentoConjugeDois = t.ConjDois.Data;
-                casameto.DataNascimentoConjugeUm = t.ConjUm.Data;
-                casameto.DataRegistro = t.DataRegistro;
-                casameto.Id = t.Id;
-                casameto.NomeConjugeDois = t.ConjDois.Nome;
-                casameto.NomeConjugeUm = t.ConjUm.Nome;
-                casameto.NomeMaeConjugeUm = t.ConjUm.Mae.Nome;
-                casameto.NomePaiConjugeUm = t.ConjUm.Pai.Nome;
+                QueryCasamento casamento = new QueryCasamento();
+                casamento.CpfConjugeDois = t.ConjDois.Documento.Cpf;
+                casamento.CpfConjugeUm = t.ConjUm.Documento.Cpf;
+                casamento.DataNascimentoConjugeDois = t.ConjDois.Data;
+                casamento.DataNascimentoConjugeUm = t.ConjUm.Data;
+                casamento.DataRegistro = t.DataRegistro;
+                casamento.Id = t.Id;
+                casamento.NomeConjugeDois = t.ConjDois.Nome;
+                casamento.NomeConjugeUm = t.ConjUm.Nome;
+                casamento.NomeMaeConjugeUm = t.ConjUm.Mae.Nome;
+                casamento.NomePaiConjugeUm = t.ConjUm.Pai.Nome;
+                      
+                casamento.NomePaiConjugeDois = t.ConjDois.Pai.Nome;
+                casamento.NomeMaeConjugeDois = t.ConjDois.Mae.Nome;
 
-                casameto.NomePaiConjugeDois = t.ConjDois.Pai.Nome;
-                casameto.NomeMaeConjugeDois = t.ConjDois.Mae.Nome;
-
-                casamentos.Add(casameto);
+                casamentos.Add(casamento);
             });
             return casamentos;
         }

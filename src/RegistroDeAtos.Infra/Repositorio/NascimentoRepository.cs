@@ -1,4 +1,5 @@
-﻿using RegistroAtos.Domain.Entidade;
+﻿using Microsoft.EntityFrameworkCore;
+using RegistroAtos.Domain.Entidade;
 using RegistroAtos.Domain.Repositorio;
 using RegistroAtos.Infra.DataBase;
 using System;
@@ -14,5 +15,14 @@ namespace RegistroAtos.Infra.Repositorio
         public NascimentoRepository(Context db) : base(db)
         {
         }
+
+        public async Task<List<Nascimento>> ObterTodos() => await _db.Nascimentos
+            .Include(t => t.RecemNascido.Nome)
+            .Include(t => t.Pai.Nome)
+            .Include(t => t.Mae.Nome)
+            .Include(t => t.DocPai.Cpf)
+            .Include(t => t.DocMae.Cpf)
+
+            .ToListAsync();
     }
 }

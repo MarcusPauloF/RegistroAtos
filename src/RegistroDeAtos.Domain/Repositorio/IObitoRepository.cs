@@ -9,5 +9,6 @@ namespace RegistroAtos.Domain.Repositorio
 {
     public interface IObitoRepository : IBaseRepository<Obito>
     {
+        Task<List<Obito>> ObterTodos();
     }
 }

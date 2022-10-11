@@ -7,12 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="ObitoService\Query\**" />
-    <EmbeddedResource Remove="ObitoService\Query\**" />
-    <None Remove="ObitoService\Query\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="CasamentoService\Commands\Input\NewFile1.txt" />
     <None Remove="CasamentoService\Commands\Output\NewFile1.txt" />
     <None Remove="CasamentoService\Event\NewFile1.txt" />
@@ -26,10 +20,6 @@
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="11.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="NascimentoService\Query\" />
   </ItemGroup>
 
 </Project>

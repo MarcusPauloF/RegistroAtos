@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RegistroDeAtos.Domain\RegistroDeAtos.Domain.csproj" />
+    <ProjectReference Include="..\RegistroDeAtos.Services\RegistroDeAtos.Services.csproj" />
   </ItemGroup>
 
 </Project>

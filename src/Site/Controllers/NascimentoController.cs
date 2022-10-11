@@ -2,22 +2,27 @@
 using RegistroDeAtos.Core.Mediator;
 using RegistroDeAtos.Services.NascimentoService.Commands.Input;
 using RegistroDeAtos.Services.NascimentoService.Commands.Output;
+using RegistroDeAtos.Services.NascimentoService.Query;
 
 namespace ResgistroDeAtos.Site.Controllers
 {
     public class NascimentoController : Controller
     {
         private readonly IMediatorHandler _mediatrHandler;
+        private readonly IConsultarNascimentoQuery _consultarNascimentoQuery;
 
-        public NascimentoController(IMediatorHandler mediatrHandler)
+        public NascimentoController(IMediatorHandler mediatrHandler,
+            IConsultarNascimentoQuery consultarNascimentoQuery)
         {
             _mediatrHandler = mediatrHandler;
+            _consultarNascimentoQuery = consultarNascimentoQuery;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             List<QueryNascimento> nascimentos = new List<QueryNascimento>();
-            return View();
+            nascimentos = await _consultarNascimentoQuery.ObterTodos();
+            return View(nascimentos);
         }
 
         [HttpGet]
