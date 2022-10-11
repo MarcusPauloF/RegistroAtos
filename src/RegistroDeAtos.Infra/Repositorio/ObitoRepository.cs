@@ -19,11 +19,9 @@ namespace RegistroAtos.Infra.Repositorio
         }
 
        public async Task<List<Obito>> ObterTodos() => await _db.Obitos
-            .Include(t => t.Pai.Nome)
-            .Include(t => t.Mae.Nome)
-            .Include(t => t.Falecido.Nome)
-            .Include(t => t.Falecido.Data)
-            .Include(t => t.DataObito)
+            .Include(t => t.Pai)
+            .Include(t => t.Mae)
+            .Include(t => t.Falecido)
 
             .ToListAsync();
     }

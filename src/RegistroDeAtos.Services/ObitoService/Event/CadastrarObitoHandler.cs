@@ -22,6 +22,7 @@ namespace RegistroDeAtos.Services.ObitoService.Event
         {
             Obito obito = new Obito();
             obito.Falecido = new PessoaFisica();
+            obito.Falecido.ObitoFalecido = new Obito();
             obito.Falecido.ObitoFalecido.DataObito = request.DataObito;
             obito.Falecido.Nome = request.Falecido.Nome;
             obito.Falecido.Data = request.Falecido.Data;

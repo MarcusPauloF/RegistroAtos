@@ -1,0 +1,83 @@
+﻿@model IEnumerable<RegistroDeAtos.Services.ObitoService.Commands.Output.QueryObito>
+
+@{
+    ViewData["Title"] = "Index Obito";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Cadastrar">Cadastrar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataRegistro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataObito)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeDoFalecido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeDoPai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeDaMae)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNascimentoPai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNascimentoMae)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataNascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataRegistro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataObito)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeDoFalecido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeDoPai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeDaMae)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataNascimentoPai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataNascimentoMae)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
